@@ -1,0 +1,15 @@
+{
+  "name": "leetcode-note",
+  "version": "1.0.0",
+  "description": "notes for leetcode",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.9.7"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "docs:deploy": "bash scripts/deploy-gh.sh"
+  }
+}
