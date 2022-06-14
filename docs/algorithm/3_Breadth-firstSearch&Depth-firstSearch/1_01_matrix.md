@@ -82,12 +82,37 @@ var updateMatrix = function(mat) {
 
 ## 动态规划
 
-a
+对于矩阵中的任意一个 `1` ，其到达 `0` 且距离最短的方法只有通过以下四种方法：
+
++ **水平向左移动** 和 **竖直向上移动**
+
++ **水平向左移动** 和 **竖直向下移动**
+
++ **水平向右移动** 和 **竖直向上移动**
+
++ **水平向右移动** 和 **竖直向下移动**
+
+因此，从矩阵的四个角开始递推，那么对应位置元素到最近的 `0` 的距离即为到左上、左下、右上、右下最近的 `0` 的最小值， `Math.min(LeftTopLen, LeftBottomLen, RightTopLen, RightBottomLen)` 。
+
+<latexDisplay>
+f(i, j)=
+\begin{cases}
+1 + min(f(i−1,j),f(i,j−1),f(i+1,j),f(i,j+1)) & \text{mat[i][j] == 1}\\
+0 & \text{mat[i][j] == 0}
+\end{cases}
+</latexDisplay>
+
+这四次递推仍然可以进行优化，可以简化为 **从任一组对角开始的2次递推** 。例如，只保留：
+
++  **水平向左移动** 和 **竖直向上移动**，从 **左上角** 开始遍历
+
++ **水平向右移动** 和 **竖直向下移动** ，从 **右下角** 开始遍历
 
 ```javascript
 var updateMatrix = function(mat) {
     const m = mat.length, n = mat[0].length
     const ans = []
+    // 初始化数组，mat[i][j] === 0则为0；否则则为Infinity
     for (let i = 0; i < m; i++) {
         ans[i] = []
         for (let j = 0; j < n; j++) {
@@ -98,12 +123,14 @@ var updateMatrix = function(mat) {
         }
     }
 
+    // 水平向左移动和竖直向上移动，从左上角开始遍历
     for (let i = 0; i < m; i++) {
         for (let j = 0; j < n; j++) {
             if (i >= 1) ans[i][j] = Math.min(ans[i][j], ans[i - 1][j] + 1)
             if (j >= 1) ans[i][j] = Math.min(ans[i][j], ans[i][j - 1] + 1)
         }
     }
+    // 水平向右移动和竖直向下移动，从右下角开始遍历
     for (let i = m - 1; i >= 0; i--) {
         for (let j = n - 1; j >= 0; j--) {
             if (i < m - 1) ans[i][j] = Math.min(ans[i][j], ans[i + 1][j] + 1)

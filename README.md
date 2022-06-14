@@ -32,5 +32,5 @@ yarn docs:dev
 yarn docs:build
 
 # 执行部署命令 run in Git Bash Here
-yarn doc:deploy
+yarn docs:deploy
 ```

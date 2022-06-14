@@ -14,7 +14,6 @@ export default {
     };
   },
   mounted() {
-    console.log('----------ok!')
     this.rawHTML = katex.renderToString(this.$slots.default[0].text, {
       throwOnError: false,
     })
