@@ -14,8 +14,9 @@ module.exports = {
           { text: '双指针', link: '/algorithm/2_DoublePointer/1_squares_of_a_sorted_array.md' },
           { text: '广度优先搜索 / 深度优先搜索', link: '/algorithm/3_Breadth-firstSearch&Depth-firstSearch/1_01_matrix.md' },
           // { text: '递归 / 回溯', link: '/algorithm/4_Recursion&Backtracking/1_squares_of_a_sorted_array.md' },
-          // { text: '动态规划', link: '/algorithm/5_DynamicProgramming/1_squares_of_a_sorted_array.md' },
-          { text: '位运算', link: '/algorithm/6_BitManipulation/0_introduction.md' },
+          { text: '贪心算法', link: '/algorithm/5_GreedyAlgorithm/1_jump_game.md' },
+          { text: '动态规划', link: '/algorithm/6_DynamicProgramming/1_house_robber.md' },
+          { text: '位运算', link: '/algorithm/7_BitManipulation/0_introduction.md' },
         ]
       },
       { 
@@ -51,15 +52,33 @@ module.exports = {
         {
           title: '广度优先搜索 / 深度优先搜索',
           children: [
-            '/algorithm/3_Breadth-firstSearch&Depth-firstSearch/1_01_matrix.md'
+            '/algorithm/3_Breadth-firstSearch&Depth-firstSearch/1_01_matrix.md',
+            '/algorithm/3_Breadth-firstSearch&Depth-firstSearch/2_shortest_path_in_binary_matrix.md'
+          ]
+        },
+        {
+          title: '贪心算法',
+          children: [
+            '/algorithm/5_GreedyAlgorithm/1_jump_game.md'
+          ]
+        },
+        {
+          title: '动态规划',
+          children: [
+            '/algorithm/6_DynamicProgramming/1_house_robber.md',
+            '/algorithm/6_DynamicProgramming/2_longest_palindromic_substring.md',
+            '/algorithm/6_DynamicProgramming/3_longest_increasing_subsequence.md',
+            '/algorithm/6_DynamicProgramming/4_longest_common_subsequence.md',
+            '/algorithm/6_DynamicProgramming/5_coin_change.md',
+            '/algorithm/6_DynamicProgramming/6_partition_equal_subset_sum.md'
           ]
         },
         {
           title: '位运算',
           children: [
-            '/algorithm/6_BitManipulation/0_introduction.md',
-            '/algorithm/6_BitManipulation/1_power_of_two.md',
-            '/algorithm/6_BitManipulation/2_reverse_bits.md',
+            '/algorithm/7_BitManipulation/0_introduction.md',
+            '/algorithm/7_BitManipulation/1_power_of_two.md',
+            '/algorithm/7_BitManipulation/2_reverse_bits.md',
           ]
         }
       ],
